@@ -1,0 +1,22 @@
+{
+  "name": "nft-generator",
+  "version": "1.0.0",
+  "description": "Generates images and metadata for a collection of NFTs.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "node index.js",
+    "test": "mocha *.test.js",
+    "update-base-uri": "node scripts/update-base-uri.js",
+    "create-gif": "node scripts/create-gif.js",
+    "calculate-hashes": "node scripts/calculate-hashes.js"
+  },
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "gif-encoder-2": "^1.0.5"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
+  }
+}
