@@ -2,7 +2,7 @@
 
 ## 关于
 
-这是一个简单的 Node.js 项目，它使用预先配置的特征和图像层列表来为 NFT 藏品集生成一组独特的图像和元数据文件。 您可以通过更新特征配置和图像层来创建自己的藏品集。
+这是一个简单的 Node.js 项目，它使用预先配置的特征和图像层列表来为 NFT 藏品集生成一组独特的图像和`metadata`文件。 您可以通过更新特征配置和图像层来创建自己的藏品集。
 
 ## 入门
 
@@ -28,9 +28,9 @@
 
 在 `config.js` 文件中测试当前配置
 
-```sh
-npm test
-```
+   ```sh
+   npm test
+   ```
 
 这只会测试当前配置是否正确。
 
@@ -38,43 +38,43 @@ npm test
 
 使用当前配置运行项目
 
-```sh
-npm run build
-```
+   ```sh
+   npm run build
+   ```
 
 这将执行主脚本。 如果执行成功，它将：
 
 - 在控制台中打印带有结果统计信息的日志
-- 生成一个包含所有令牌图像的文件夹
-- 生成一个包含所有令牌元数据文件的文件夹
+- 生成一个包含所有`token`的`images`文件夹
+- 生成一个包含所有`token`的`metadata`文件夹
 
 ### 其他脚本
 
 #### 更新图像基础 URI
 
-运行项目后，您可以通过运行以下命令更新所有生成的元数据文件中的图像基本 URI：
+运行项目后，您可以通过运行以下命令更新所有生成的`metadata`文件中的图像基本 URI：
 
-```sh
-npm run update-base-uri
-```
+   ```sh
+   npm run update-base-uri
+   ```
 
-这将获取 `config.js` 中的 `IMAGES_BASE_URI` 的当前值，并使用它来更新所有元数据文件。
+这将获取 `config.js` 中的 `IMAGES_BASE_URI` 的当前值，并使用它来更新所有`metadata`文件。
 
 #### 创建 GIF
 
 运行项目后，您可以使用生成的图像创建 GIF：
 
-```sh
-npm run create-gif
-```
+   ```sh
+   npm run create-gif
+   ```
 
 #### 计算图像的哈希值
 
-运行项目后，您可以启动以下脚本来计算生成的每个图像的 `SHA-256` 哈希，并打印所有图像的最终出处哈希：
+运行项目后，您可以启动以下脚本来计算生成的每个图像的 `SHA-256` 哈希，并打印所有图像的最终输出`hash`值：
 
-```sh
-npm run calculate-hashes
-```
+   ```sh
+   npm run calculate-hashes
+   ```
 
 ## 创建您自己的藏品集
 
@@ -86,35 +86,35 @@ npm run calculate-hashes
 
 这些是您需要在 `config.js` 文件中更新的常量：
 
-```JS
-config.GIF_FRAMES = 10; // 仅当您想生成GIF
-config.IMAGES_BASE_URI = "https://base-uri-to-my-nft-images.com/";
-config.IMAGES_HEIGHT = 350;
-config.IMAGES_WIDTH = 350;
-config.TOKEN_NAME_PREFIX = "My NFT #";
-config.TOKEN_DESCRIPTION = "My NFT description.";
-config.TOTAL_TOKENS = 100;
-```
+   ```JS
+   config.GIF_FRAMES = 10; // 仅当您想生成GIF
+   config.IMAGES_BASE_URI = "https://base-uri-to-my-nft-images.com/";
+   config.IMAGES_HEIGHT = 350;
+   config.IMAGES_WIDTH = 350;
+   config.TOKEN_NAME_PREFIX = "My NFT #";
+   config.TOKEN_DESCRIPTION = "My NFT description.";
+   config.TOTAL_TOKENS = 100;
+   ```
 
 ### 修改特征列表
 
 您还必须修改最后一个名为`ORDERED_TRAITS_LIST`的变量，该变量包含标记的所有可用特征的数组。
 每个 _trait_ 都有以下结构：
 
-```JS
-{
-  display?: string;
-  ignore?: boolean;
-  type?: string;
-  options: {
-    allowed?: string[];
-    forbidden?: string[];
-    image?: string;
-    value?: string | number;
-    weight: number;
-  }[]
-}
-```
+   ```JS
+   {
+     display?: string;
+     ignore?: boolean;
+     type?: string;
+     options: {
+       allowed?: string[];
+       forbidden?: string[];
+       image?: string;
+       value?: string | number;
+       weight: number;
+     }[]
+   }
+   ```
 
 在修改 _traits_ 列表之前，请仔细阅读以下重要说明：
 
