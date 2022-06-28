@@ -70,7 +70,7 @@
 
 #### 计算图像的哈希值
 
-运行项目后，您可以启动以下脚本来计算生成的每个图像的 `SHA-256` 哈希，并打印所有图像的最终输出`hash`值：
+运行项目后，您可以启动以下脚本来计算生成的每个图像的 `SHA-256` 哈希，并在控制台输出所有图像最终的`hash`值：
 
    ```sh
    npm run calculate-hashes
@@ -87,7 +87,7 @@
 这些是您需要在 `config.js` 文件中更新的常量：
 
    ```JS
-   config.GIF_FRAMES = 10; // 仅当您想生成GIF
+   config.GIF_FRAMES = 10;
    config.IMAGES_BASE_URI = "https://base-uri-to-my-nft-images.com/";
    config.IMAGES_HEIGHT = 350;
    config.IMAGES_WIDTH = 350;
